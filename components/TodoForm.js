@@ -29,7 +29,7 @@ export default function TodoForm({ initial, onSubmit, onCancel }) {
           required
           value={values.title}
           onChange={(e) => handleChange('title', e.target.value)}
-          placeholder="What needs doing?"
+          placeholder="What's your upcoming plan?"
         />
       </div>
       <div className="field">
