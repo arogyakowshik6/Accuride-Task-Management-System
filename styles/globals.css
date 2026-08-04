@@ -1,0 +1,537 @@
+:root {
+  --paper: #f7f5ef;
+  --paper-raised: #ffffff;
+  --ink: #21262b;
+  --ink-soft: #565f66;
+  --amber: #a8662b;
+  --amber-dark: #7f4c1c;
+  --pine: #2f5233;
+  --pine-soft: #e3ebe2;
+  --rule: #d8d2c4;
+  --danger: #a6372e;
+  --danger-soft: #f5e3e1;
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Auth screens ---------- */
+
+.auth-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 380px;
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 36px 32px;
+  position: relative;
+}
+
+.auth-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 28px;
+  width: 22px;
+  height: 34px;
+  background: var(--amber);
+  border-radius: 0 0 4px 4px;
+}
+
+.auth-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber-dark);
+  margin: 12px 0 4px;
+}
+
+.auth-title {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0 0 22px;
+}
+
+.field {
+  margin-bottom: 16px;
+}
+
+.field label {
+  display: block;
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin-bottom: 6px;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  background: var(--paper);
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 64px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+.btn-primary {
+  background: var(--ink);
+  color: var(--paper);
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background: var(--amber-dark);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--rule);
+}
+
+.btn-ghost:hover {
+  border-color: var(--ink);
+}
+
+.btn-danger {
+  background: transparent;
+  color: var(--danger);
+  border: 1px solid var(--danger-soft);
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+.btn-danger:hover {
+  background: var(--danger-soft);
+}
+
+.auth-alt {
+  margin-top: 18px;
+  font-size: 13px;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+.auth-alt a {
+  color: var(--amber-dark);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.error-banner {
+  background: var(--danger-soft);
+  color: var(--danger);
+  font-size: 13px;
+  padding: 10px 12px;
+  border-radius: 3px;
+  margin-bottom: 16px;
+}
+
+/* ---------- Dashboard shell ---------- */
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 28px;
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper-raised);
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.brand-mark {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.brand-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.user-pill {
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+.tabs {
+  display: flex;
+  gap: 2px;
+  padding: 0 28px;
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper-raised);
+}
+
+.tab {
+  padding: 12px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+}
+
+.tab.active {
+  color: var(--ink);
+  border-bottom-color: var(--amber);
+}
+
+.content {
+  flex: 1;
+  padding: 28px;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  margin: 0;
+}
+
+/* ---------- Todo form ---------- */
+
+.todo-form {
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 18px;
+  margin-bottom: 24px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 14px;
+}
+
+.todo-form .field-full {
+  grid-column: 1 / -1;
+}
+
+.todo-form .form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+@media (max-width: 560px) {
+  .todo-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- List view: ledger cards ---------- */
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.todo-card {
+  display: flex;
+  align-items: stretch;
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.todo-card.completed {
+  opacity: 0.6;
+}
+
+.todo-date-tab {
+  font-family: var(--font-mono);
+  background: var(--ink);
+  color: var(--paper);
+  width: 60px;
+  min-width: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 4px;
+}
+
+.todo-card.completed .todo-date-tab {
+  background: var(--pine);
+}
+
+.todo-date-day {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.todo-date-month {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.todo-body {
+  flex: 1;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.todo-title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.todo-title.done {
+  text-decoration: line-through;
+  color: var(--ink-soft);
+}
+
+.todo-desc {
+  font-size: 13px;
+  color: var(--ink-soft);
+  overflow-wrap: anywhere;
+}
+
+.todo-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  border-left: 1px solid var(--rule);
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--ink-soft);
+  padding: 4px 6px;
+}
+
+.icon-btn:hover {
+  color: var(--ink);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 48px 16px;
+  color: var(--ink-soft);
+  border: 1px dashed var(--rule);
+  border-radius: 4px;
+}
+
+/* ---------- Calendar view ---------- */
+
+.calendar-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.calendar-month {
+  font-family: var(--font-display);
+  font-size: 18px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--rule);
+  gap: 1px;
+}
+
+.calendar-dow {
+  background: var(--paper-raised);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  padding: 6px 2px;
+  text-align: center;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.calendar-cell {
+  background: var(--paper-raised);
+  min-height: 84px;
+  min-width: 0;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  overflow: hidden;
+}
+
+.calendar-cell.empty {
+  background: var(--paper);
+}
+
+.calendar-cell.today .cell-date {
+  color: var(--amber-dark);
+  font-weight: 700;
+}
+
+.cell-date {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-soft);
+}
+
+.cell-todo {
+  font-size: 11px;
+  background: var(--pine-soft);
+  color: var(--pine);
+  padding: 2px 5px;
+  border-radius: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cell-todo.pending {
+  background: #f1e6d8;
+  color: var(--amber-dark);
+}
+
+@media (max-width: 640px) {
+  .calendar-cell {
+    min-height: 48px;
+    font-size: 10px;
+    padding: 4px;
+  }
+  .cell-date {
+    font-size: 10px;
+  }
+  .cell-todo {
+    display: none;
+  }
+  .cell-todo.first {
+    display: block;
+    font-size: 9px;
+    padding: 1px 3px;
+  }
+  .calendar-dow {
+    font-size: 0;
+  }
+  .calendar-dow::first-letter {
+    font-size: 10px;
+  }
+  .topbar {
+    padding: 14px 16px;
+  }
+  .content {
+    padding: 18px 16px;
+  }
+}
