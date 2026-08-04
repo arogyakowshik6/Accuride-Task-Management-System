@@ -58,7 +58,7 @@ textarea:focus-visible {
   flex-direction: column;
 }
 
-/* ---------- Auth screens ---------- */
+
 
 .auth-wrap {
   flex: 1;
@@ -201,7 +201,7 @@ textarea:focus-visible {
   margin-bottom: 16px;
 }
 
-/* ---------- Dashboard shell ---------- */
+
 
 .topbar {
   display: flex;
@@ -290,7 +290,7 @@ textarea:focus-visible {
   margin: 0;
 }
 
-/* ---------- Todo form ---------- */
+
 
 .todo-form {
   background: var(--paper-raised);
@@ -320,7 +320,6 @@ textarea:focus-visible {
   }
 }
 
-/* ---------- List view: ledger cards ---------- */
 
 .todo-list {
   display: flex;
@@ -426,7 +425,6 @@ textarea:focus-visible {
   border-radius: 4px;
 }
 
-/* ---------- Calendar view ---------- */
 
 .calendar-head {
   display: flex;

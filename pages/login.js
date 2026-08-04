@@ -29,12 +29,12 @@ export default function Login({ csrfToken }) {
   return (
     <div className="page">
       <Head>
-        <title>Sign in · Ledger</title>
+        <title>Sign in · Accuride</title>
       </Head>
       <div className="auth-wrap">
         <form className="auth-card" onSubmit={handleSubmit}>
           <input name="csrfToken" type="hidden" defaultValue={csrfToken} />
-          <p className="auth-eyebrow">Ledger</p>
+          <p className="auth-eyebrow">Accuride</p>
           <h1 className="auth-title">Sign in</h1>
           {error && <div className="error-banner">{error}</div>}
           <div className="field">

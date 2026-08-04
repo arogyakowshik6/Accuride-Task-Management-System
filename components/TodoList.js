@@ -12,7 +12,7 @@ export default function TodoList({ todos, onToggle, onUpdate, onDelete }) {
   const [editingId, setEditingId] = useState(null);
 
   if (todos.length === 0) {
-    return <div className="empty-state">Nothing on the ledger yet. Add your first to-do above.</div>;
+    return <div className="empty-state">Nothing on the To-do list yet. Add your first to-do above.</div>;
   }
 
   return (

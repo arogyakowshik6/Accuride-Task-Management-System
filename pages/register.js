@@ -40,11 +40,11 @@ export default function Register() {
   return (
     <div className="page">
       <Head>
-        <title>Create account · Ledger</title>
+        <title>Create account · Accuride</title>
       </Head>
       <div className="auth-wrap">
         <form className="auth-card" onSubmit={handleSubmit}>
-          <p className="auth-eyebrow">Ledger</p>
+          <p className="auth-eyebrow">Accuride</p>
           <h1 className="auth-title">Create your account</h1>
           {error && <div className="error-banner">{error}</div>}
           <div className="field">

@@ -65,12 +65,12 @@ export default function Home({ user }) {
   return (
     <div className="page">
       <Head>
-        <title>Ledger · To-Dos</title>
+        <title>Accuride · To-Dos</title>
       </Head>
       <header className="topbar">
         <div className="brand">
-          <span className="brand-mark">Ledger</span>
-          <span className="brand-tag">Accuride task</span>
+          <span className="brand-mark">Accuride</span>
+          <span className="brand-tag">Task Manager</span>
         </div>
         <div className="topbar-right">
           <span className="user-pill">{user?.name || user?.email}</span>
