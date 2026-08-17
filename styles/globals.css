@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #edf0ef;
+  color: #1b2430;
+  font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+*:focus-visible {
+  outline: 2px solid #e2a63b;
+  outline-offset: 2px;
+}
+
+/* ---------- Ticket stub (signature element) ---------- */
+
+.ticket {
+  position: relative;
+  background: #fbfaf7;
+  border: 1px solid rgba(27, 36, 48, 0.12);
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(27, 36, 48, 0.04);
+}
+
+/* punch-hole notches cut into the left/right edge of a ticket */
+.ticket-notch::before,
+.ticket-notch::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  background: #edf0ef;
+  transform: translateY(-50%);
+}
+.ticket-notch::before {
+  left: -8px;
+}
+.ticket-notch::after {
+  right: -8px;
+}
+
+@media (max-width: 639px) {
+  .ticket-notch::before,
+  .ticket-notch::after {
+    display: none;
+  }
+}
+
+/* dashed perforation between a ticket's main content and its stub */
+.ticket-perforation {
+  border-color: rgba(27, 36, 48, 0.22);
+}
+
+/* rotated ink-stamp badge, used for due dates */
+.stamp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid currentColor;
+  border-radius: 3px;
+  padding: 0.2rem 0.5rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transform: rotate(-2.5deg);
+  white-space: nowrap;
+}
+
+/* ---------- react-calendar overrides: planner-page look ---------- */
+
+.react-calendar {
+  width: 100% !important;
+  border: none !important;
+  font-family: "IBM Plex Sans", sans-serif;
+  background: transparent;
+}
+
+.react-calendar__navigation button {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  color: #1b2430;
+}
+
+.react-calendar__month-view__weekdays {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+}
+
+.react-calendar__month-view__weekdays abbr {
+  text-decoration: none;
+}
+
+.react-calendar__tile {
+  position: relative;
+  padding-bottom: 1.35rem !important;
+  border-radius: 2px;
+  color: #1b2430;
+}
+
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  background: #f6e4be !important;
+}
+
+.react-calendar__tile--now {
+  background: #f6e4be !important;
+  font-weight: 600;
+}
+
+.react-calendar__tile--active {
+  background: #1b2430 !important;
+  color: #fbfaf7 !important;
+}
+
+.todo-dot {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 9999px;
+  background: #e2a63b;
+}
+
+.react-calendar__tile--active .todo-dot {
+  background: #fbfaf7;
+}
